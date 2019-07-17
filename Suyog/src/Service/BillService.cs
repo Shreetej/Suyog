@@ -19,7 +19,7 @@ namespace Suyog.src.Service
 
         public Bill DisplayBills(int billId)
         {
-            return billRepository.;
+            return null;//billRepository.;
         }
     }
 }
