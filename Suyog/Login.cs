@@ -15,6 +15,7 @@ namespace Suyog
         public LoginForm()
         {
             InitializeComponent();
+            lb_error.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,6 +31,22 @@ namespace Suyog
         private void Tb_userName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+            if(tb_userName.Text=="shree"&& tb_password.Text == "shree")
+            {
+                var std = this;
+                Home home = new Home();
+                home.ShowDialog();
+                std.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Username or password incorrect.");
+            }
         }
     }
 }

@@ -16,5 +16,13 @@ namespace Suyog
         {
             InitializeComponent();
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            var currentform = this;
+            AddBill addBill = new AddBill();
+            addBill.ShowDialog();
+            currentform.Close();
+        }
     }
 }

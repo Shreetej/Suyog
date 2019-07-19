@@ -34,7 +34,7 @@
             this.o = new System.Windows.Forms.Label();
             this.tb_invoiceNo = new System.Windows.Forms.TextBox();
             this.lb_date = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.billDate = new System.Windows.Forms.DateTimePicker();
             this.lb_sender = new System.Windows.Forms.Label();
             this.cb_truckno = new System.Windows.Forms.ComboBox();
             this.cb_sender = new System.Windows.Forms.ComboBox();
@@ -47,15 +47,15 @@
             this.cb_materialType = new System.Windows.Forms.ComboBox();
             this.lb_type = new System.Windows.Forms.Label();
             this.tb_qty = new System.Windows.Forms.TextBox();
-            this.lb_qty = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tb_units = new System.Windows.Forms.TextBox();
             this.lb_units = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dg_materials = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lb_qty = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_materials)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_billno
@@ -109,12 +109,12 @@
             this.lb_date.TabIndex = 6;
             this.lb_date.Text = "Date :";
             // 
-            // dateTimePicker1
+            // billDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(911, 65);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.billDate.Location = new System.Drawing.Point(911, 65);
+            this.billDate.Name = "billDate";
+            this.billDate.Size = new System.Drawing.Size(199, 20);
+            this.billDate.TabIndex = 7;
             // 
             // lb_sender
             // 
@@ -214,15 +214,6 @@
             this.tb_qty.Size = new System.Drawing.Size(100, 20);
             this.tb_qty.TabIndex = 20;
             // 
-            // lb_qty
-            // 
-            this.lb_qty.AutoSize = true;
-            this.lb_qty.Location = new System.Drawing.Point(486, 297);
-            this.lb_qty.Name = "lb_qty";
-            this.lb_qty.Size = new System.Drawing.Size(52, 13);
-            this.lb_qty.TabIndex = 19;
-            this.lb_qty.Text = "Quantity :";
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Location = new System.Drawing.Point(48, 40);
@@ -247,13 +238,16 @@
             this.lb_units.TabIndex = 22;
             this.lb_units.Text = "Units :";
             // 
-            // dataGridView1
+            // dg_materials
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 375);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1076, 183);
-            this.dataGridView1.TabIndex = 24;
+            this.dg_materials.AllowUserToAddRows = false;
+            this.dg_materials.AllowUserToResizeColumns = false;
+            this.dg_materials.AllowUserToResizeRows = false;
+            this.dg_materials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_materials.Location = new System.Drawing.Point(48, 375);
+            this.dg_materials.Name = "dg_materials";
+            this.dg_materials.Size = new System.Drawing.Size(1076, 183);
+            this.dg_materials.TabIndex = 24;
             // 
             // btn_add
             // 
@@ -263,6 +257,7 @@
             this.btn_add.TabIndex = 25;
             this.btn_add.Text = "ADD";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_save
             // 
@@ -272,6 +267,7 @@
             this.btn_save.TabIndex = 26;
             this.btn_save.Text = "SAVE";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -280,6 +276,15 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1076, 67);
             this.flowLayoutPanel2.TabIndex = 27;
             // 
+            // lb_qty
+            // 
+            this.lb_qty.AutoSize = true;
+            this.lb_qty.Location = new System.Drawing.Point(486, 297);
+            this.lb_qty.Name = "lb_qty";
+            this.lb_qty.Size = new System.Drawing.Size(52, 13);
+            this.lb_qty.TabIndex = 19;
+            this.lb_qty.Text = "Quantity :";
+            // 
             // AddBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,7 +292,7 @@
             this.ClientSize = new System.Drawing.Size(1159, 667);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_add);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dg_materials);
             this.Controls.Add(this.tb_units);
             this.Controls.Add(this.lb_units);
             this.Controls.Add(this.tb_qty);
@@ -303,7 +308,7 @@
             this.Controls.Add(this.cb_sender);
             this.Controls.Add(this.cb_truckno);
             this.Controls.Add(this.lb_sender);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.billDate);
             this.Controls.Add(this.lb_date);
             this.Controls.Add(this.tb_invoiceNo);
             this.Controls.Add(this.o);
@@ -314,7 +319,7 @@
             this.Controls.Add(this.flowLayoutPanel2);
             this.Name = "AddBill";
             this.Text = "AddBill";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_materials)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +333,7 @@
         private System.Windows.Forms.Label o;
         private System.Windows.Forms.TextBox tb_invoiceNo;
         private System.Windows.Forms.Label lb_date;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker billDate;
         private System.Windows.Forms.Label lb_sender;
         private System.Windows.Forms.ComboBox cb_truckno;
         private System.Windows.Forms.ComboBox cb_sender;
@@ -341,13 +346,13 @@
         private System.Windows.Forms.ComboBox cb_materialType;
         private System.Windows.Forms.Label lb_type;
         private System.Windows.Forms.TextBox tb_qty;
-        private System.Windows.Forms.Label lb_qty;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox tb_units;
         private System.Windows.Forms.Label lb_units;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dg_materials;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lb_qty;
     }
 }
