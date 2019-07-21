@@ -64,13 +64,36 @@ namespace Suyog
                 }
                 totalwt = totalunits * totalqty;
                 billService = new BillService();
-                billService.addBill(int.Parse(tb_billNo.Text), cb_truckno.Text, tb_invoiceNo.Text, billDate.Value, cb_sender.Text, cb_reciever.Text, tb_from.Text, tb_to.Text, totalqty, totalwt, materials);
-
+                Bill bill = billService.addBill(int.Parse(tb_billNo.Text), cb_truckno.Text, tb_invoiceNo.Text, billDate.Value, cb_sender.Text, cb_reciever.Text, tb_from.Text, tb_to.Text, totalqty, totalwt, materials);
+                MessageBox.Show("Bill Added Sucessfully.");
+                clearAllControls();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Form std = this;
+            Home home = new Home();
+            std.Close();
+        }
+
+        private void clearAllControls()
+        {
+            tb_billNo.Clear();
+            cb_truckno.Items.Clear();
+            tb_invoiceNo.Clear();
+            cb_sender.Items.Clear();
+            cb_reciever.Items.Clear();
+            tb_from.Clear();
+            tb_to.Clear();
+            cb_materialType.Items.Clear();
+            tb_qty.Clear();
+            tb_units.Clear();
+            dg_materials.Rows.Clear();
         }
     }
 }

@@ -34,16 +34,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.cb_search = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_search = new System.Windows.Forms.TextBox();
+            this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(508, 173);
+            this.btn_search.Location = new System.Drawing.Point(761, 117);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 23);
             this.btn_search.TabIndex = 1;
             this.btn_search.Text = "SEARCH";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_add
             // 
@@ -87,16 +91,52 @@
             this.cb_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_search.FormattingEnabled = true;
-            this.cb_search.Location = new System.Drawing.Point(321, 118);
+            this.cb_search.Items.AddRange(new object[] {
+            "BillNo",
+            "TruckNo",
+            "InvoiceNo",
+            "BillDate",
+            "SenderName",
+            "ReceiverName",
+            "FromLocation",
+            "ToLocation"});
+            this.cb_search.Location = new System.Drawing.Point(322, 119);
             this.cb_search.Name = "cb_search";
-            this.cb_search.Size = new System.Drawing.Size(471, 21);
+            this.cb_search.Size = new System.Drawing.Size(165, 21);
             this.cb_search.TabIndex = 5;
+            this.cb_search.SelectedIndexChanged += new System.EventHandler(this.cb_search_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(250, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Search By :";
+            // 
+            // tb_search
+            // 
+            this.tb_search.Location = new System.Drawing.Point(526, 119);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(212, 20);
+            this.tb_search.TabIndex = 7;
+            // 
+            // dtp_date
+            // 
+            this.dtp_date.Location = new System.Drawing.Point(526, 119);
+            this.dtp_date.Name = "dtp_date";
+            this.dtp_date.Size = new System.Drawing.Size(154, 20);
+            this.dtp_date.TabIndex = 8;
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 668);
+            this.Controls.Add(this.dtp_date);
+            this.Controls.Add(this.tb_search);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_search);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -106,6 +146,7 @@
             this.Name = "Home";
             this.Text = "Home";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,5 +158,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox cb_search;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tb_search;
+        private System.Windows.Forms.DateTimePicker dtp_date;
     }
 }

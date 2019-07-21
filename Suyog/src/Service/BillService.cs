@@ -1,6 +1,7 @@
 ﻿using Suyog.src.Model;
 using Suyog.src.Repository;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,9 @@ namespace Suyog.src.Service
             billRepository = new BillRepository();
         }
 
-        public Bill DisplayBills(int billId)
+        public Bill DisplayBillbyId(int billid)
         {
-            return billRepository.Bills.Find(billId);
+            return billRepository.Bills.Find(billid);
         }
 
         public Bill addBill(int billno, string truckno, string invoiceno, DateTime billDate, string sender, string receiver, string from, string to, int qty, float wt, List<Material> material)
@@ -52,9 +53,46 @@ namespace Suyog.src.Service
             billRepository.SaveChanges();
         }
 
-        public List<Bill> displayBills()
+        public List<Bill> DisplayBills(string search, string searchtype, DateTime dateTime)
         {
-            return billRepository.Bills.ToList<Bill>();
-        } 
+            if (string.IsNullOrEmpty(search))
+            {
+                return billRepository.Bills.ToList<Bill>();
+            }
+            else
+            {
+                switch (searchtype)
+                {
+                    case "BillNo":
+                        int billNo = int.Parse(search);
+                        List<Bill> list = new List<Bill>();
+                        list.Add(DisplayBillbyId(billNo));
+                        return list;
+
+                    case "TruckNo":
+                        return billRepository.Bills.Where(s => s.TruckNo.Equals(search)).ToList<Bill>();
+
+                    case "InvoiceNo":
+                        return billRepository.Bills.Where(s => s.InvoiceNo.Equals(search)).ToList<Bill>();
+
+                    case "BillDate":
+                        return billRepository.Bills.Where(s => s.BillDate.Date.Equals(dateTime.Date)).ToList<Bill>();
+
+                    case "SenderName":
+                        return billRepository.Bills.Where(s => s.SenderName.Equals(search)).ToList<Bill>();
+
+                    case "ReceiverName":
+                        return billRepository.Bills.Where(s => s.ReceiverName.Equals(search)).ToList<Bill>();
+
+                    case "FromLocation":
+                        return billRepository.Bills.Where(s => s.FromLocation.Equals(search)).ToList<Bill>();
+
+                    case "ToLocation":
+                        return billRepository.Bills.Where(s => s.ToLocation.Equals(search)).ToList<Bill>();
+                }
+                return null;
+            }
+          
+        }
     }
 }

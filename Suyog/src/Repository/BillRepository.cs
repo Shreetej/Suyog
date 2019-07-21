@@ -1,16 +1,14 @@
-﻿using Suyog.src.Model;
-using System;
-using System.Collections.Generic;
+﻿
+using MySql.Data.Entity;
+using Suyog.src.Model;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Suyog.src.Repository
 {
+    [DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class BillRepository : DbContext
-    {
-        public BillRepository() : base()
+    {   
+        public BillRepository() : base("MyContext")
         {
 
         }

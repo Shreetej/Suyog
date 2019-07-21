@@ -55,6 +55,7 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lb_qty = new System.Windows.Forms.Label();
+            this.btn_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_materials)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,6 +244,8 @@
             this.dg_materials.AllowUserToAddRows = false;
             this.dg_materials.AllowUserToResizeColumns = false;
             this.dg_materials.AllowUserToResizeRows = false;
+            this.dg_materials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dg_materials.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dg_materials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_materials.Location = new System.Drawing.Point(48, 375);
             this.dg_materials.Name = "dg_materials";
@@ -261,7 +264,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(544, 603);
+            this.btn_save.Location = new System.Drawing.Point(469, 600);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 26;
@@ -285,11 +288,22 @@
             this.lb_qty.TabIndex = 19;
             this.lb_qty.Text = "Quantity :";
             // 
+            // btn_back
+            // 
+            this.btn_back.Location = new System.Drawing.Point(593, 600);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(75, 23);
+            this.btn_back.TabIndex = 28;
+            this.btn_back.Text = "BACK";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // AddBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1159, 667);
+            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.dg_materials);
@@ -354,5 +368,6 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label lb_qty;
+        private System.Windows.Forms.Button btn_back;
     }
 }

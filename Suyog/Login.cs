@@ -37,7 +37,7 @@ namespace Suyog
         {
             if(tb_userName.Text=="shree"&& tb_password.Text == "shree")
             {
-                var std = this;
+                Form std = this;
                 Home home = new Home();
                 home.ShowDialog();
                 std.Close();
