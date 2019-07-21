@@ -25,7 +25,7 @@ namespace Suyog.src.Service
 
         public Bill addBill(int billno, string truckno, string invoiceno, DateTime billDate, string sender, string receiver, string from, string to, int qty, float wt, List<Material> material)
         {
-            Bill bill = billRepository.Bills.Add(new Bill(billno, truckno, invoiceno, billDate, sender, receiver, from, to, qty, wt, material));
+            Bill bill = billRepository.Bills.Add(new Bill(billno, truckno, invoiceno, billDate.Date, sender, receiver, from, to, qty, wt, material));
             billRepository.SaveChanges();
             return bill;
         }
@@ -55,7 +55,7 @@ namespace Suyog.src.Service
 
         public List<Bill> DisplayBills(string search, string searchtype, DateTime dateTime)
         {
-            if (string.IsNullOrEmpty(search))
+            if (string.IsNullOrEmpty(search) && !(searchtype.Equals("BillDate")))
             {
                 return billRepository.Bills.ToList<Bill>();
             }
@@ -76,7 +76,7 @@ namespace Suyog.src.Service
                         return billRepository.Bills.Where(s => s.InvoiceNo.Equals(search)).ToList<Bill>();
 
                     case "BillDate":
-                        return billRepository.Bills.Where(s => s.BillDate.Date.Equals(dateTime.Date)).ToList<Bill>();
+                        return billRepository.Bills.Where(s => s.BillDate.ToString().Equals(dateTime.Date.ToString())).ToList<Bill>();
 
                     case "SenderName":
                         return billRepository.Bills.Where(s => s.SenderName.Equals(search)).ToList<Bill>();
