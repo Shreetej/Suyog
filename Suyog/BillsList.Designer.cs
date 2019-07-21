@@ -35,22 +35,27 @@
             // dg_billList
             // 
             this.dg_billList.AllowUserToAddRows = false;
+            this.dg_billList.AllowUserToDeleteRows = false;
             this.dg_billList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dg_billList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dg_billList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_billList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dg_billList.Location = new System.Drawing.Point(0, 0);
             this.dg_billList.Name = "dg_billList";
-            this.dg_billList.Size = new System.Drawing.Size(800, 450);
+            this.dg_billList.ReadOnly = true;
+            this.dg_billList.Size = new System.Drawing.Size(868, 450);
             this.dg_billList.TabIndex = 0;
-            //this.dg_billList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_billList_CellContentClick);
             // 
             // BillsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(868, 450);
             this.Controls.Add(this.dg_billList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "BillsList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BillsList";
             this.Load += new System.EventHandler(this.BillsList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_billList)).EndInit();
