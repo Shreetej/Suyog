@@ -53,7 +53,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(868, 450);
             this.Controls.Add(this.dg_billList);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BillsList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BillsList";

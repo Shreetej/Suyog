@@ -331,6 +331,7 @@
             this.Controls.Add(this.lb_billno);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddBill";
             this.Text = "AddBill";
             ((System.ComponentModel.ISupportInitialize)(this.dg_materials)).EndInit();

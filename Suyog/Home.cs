@@ -13,42 +13,61 @@ namespace Suyog
 {
     public partial class Home : Form
     {
-        public string searchString = "";
+
         public Home()
         {
             InitializeComponent();
-            dtp_date.Hide();
+            
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Form currentform = this;
+            panel_tab.Controls.Clear();
             AddBill addBill = new AddBill();
-            addBill.ShowDialog();
-            currentform.Close();
+            addBill.TopLevel = false;
+            panel_tab.Controls.Add(addBill);
+            addBill.Dock = DockStyle.Fill;
+            addBill.Show();
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            searchString = tb_search.Text;
-            DateTime dateTime = dtp_date.Value;
-
-            BillsList billsList = new BillsList(searchString,cb_search.Text,dateTime);
-            billsList.Show();
-        }
+                    }
 
         private void cb_search_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cb_search.Text.Equals("BillDate"))
-            {
-                tb_search.Hide();
-                dtp_date.Show();
-            }
-            else
-            {
-                dtp_date.Hide();
-                tb_search.Show();
-            }
+            
+        }
+
+        private void btn_employee_Click(object sender, EventArgs e)
+        {
+            panel_tab.Controls.Clear();
+            EmployeeDetails employeeDetails = new EmployeeDetails();
+            employeeDetails.TopLevel = false;
+            panel_tab.Controls.Add(employeeDetails);
+            employeeDetails.Dock = DockStyle.Fill;
+            employeeDetails.Show();
+
+        }
+
+        private void homePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel_tab.Controls.Clear();
+            searchForm searchForm = new searchForm();
+            searchForm.TopLevel = false;
+            panel_tab.Controls.Add(searchForm);
+            searchForm.Dock = DockStyle.Fill;
+            searchForm.Show();
         }
     }
 }
