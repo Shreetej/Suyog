@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Suyog.src.Model;
+using Suyog.src.Repository;
+using Suyog.src.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,8 @@ namespace Suyog
 {
     public partial class EmployeeDetails : Form
     {
+        private EmployeeService employeeService;
+
         public EmployeeDetails()
         {
             InitializeComponent();
@@ -118,6 +123,83 @@ namespace Suyog
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_upphoto_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openphoto = new OpenFileDialog() { Filter ="JPEG|jpg", ValidateNames = true, Multiselect = true })
+            {
+                if (openphoto.ShowDialog() == DialogResult.OK )
+                {
+                    pb_photo.Image = Image.FromFile(openphoto.FileName);
+                }
+            }
+                
+        }
+
+        private void btn_upaadhar_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openaadhar = new OpenFileDialog() { Filter = "JPEG|jpg", ValidateNames = true, Multiselect = true })
+            {
+                if (openaadhar.ShowDialog() == DialogResult.OK)
+                {
+                    pb_aadhar.Image = Image.FromFile(openaadhar.FileName);
+                }
+            }
+        }
+
+        private void btn_uppancard_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openpan = new OpenFileDialog() { Filter = "JPEG|jpg", ValidateNames = true, Multiselect = true })
+            {
+                if (openpan.ShowDialog() == DialogResult.OK)
+                {
+                    pb_pancard.Image = Image.FromFile(openpan.FileName);
+                }
+            }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                employeeService = new EmployeeService();
+                                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pb_photo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pb_aadhar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pb_pancard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_pancardimg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_aadharimg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_photo_Click(object sender, EventArgs e)
         {
 
         }

@@ -34,14 +34,14 @@
             this.AddEmployee = new System.Windows.Forms.TabPage();
             this.btn_save = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_pan = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_aadhar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_mobile = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_doj = new System.Windows.Forms.DateTimePicker();
+            this.dtp_dob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_dob = new System.Windows.Forms.Label();
             this.rtb_address = new System.Windows.Forms.RichTextBox();
@@ -51,26 +51,47 @@
             this.ViewEmployee = new System.Windows.Forms.TabPage();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbv_pan = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbv_aadhar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtpv_doj = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtpv_dob = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbv_mobile = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.rtbv_address = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tbv_name = new System.Windows.Forms.TextBox();
             this.lb_name = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pb_photo = new System.Windows.Forms.PictureBox();
+            this.pb_aadhar = new System.Windows.Forms.PictureBox();
+            this.pb_pancard = new System.Windows.Forms.PictureBox();
+            this.lbl_photo = new System.Windows.Forms.Label();
+            this.lbl_aadharimg = new System.Windows.Forms.Label();
+            this.lbl_pancardimg = new System.Windows.Forms.Label();
+            this.btn_upphoto = new System.Windows.Forms.Button();
+            this.btn_upaadhar = new System.Windows.Forms.Button();
+            this.btn_uppancard = new System.Windows.Forms.Button();
+            this.pbv_photo = new System.Windows.Forms.PictureBox();
+            this.pbv_aadhar = new System.Windows.Forms.PictureBox();
+            this.pbv_pancard = new System.Windows.Forms.PictureBox();
+            this.btnv_upphoto = new System.Windows.Forms.Button();
+            this.btnv_aadhar = new System.Windows.Forms.Button();
+            this.btnv_pan = new System.Windows.Forms.Button();
             this.EmployeeTab.SuspendLayout();
             this.listOfEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_employees)).BeginInit();
             this.AddEmployee.SuspendLayout();
             this.ViewEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_aadhar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_pancard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_aadhar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_pancard)).BeginInit();
             this.SuspendLayout();
             // 
             // EmployeeTab
@@ -78,10 +99,10 @@
             this.EmployeeTab.Controls.Add(this.listOfEmployees);
             this.EmployeeTab.Controls.Add(this.AddEmployee);
             this.EmployeeTab.Controls.Add(this.ViewEmployee);
-            this.EmployeeTab.Location = new System.Drawing.Point(12, -8);
+            this.EmployeeTab.Location = new System.Drawing.Point(12, 4);
             this.EmployeeTab.Name = "EmployeeTab";
             this.EmployeeTab.SelectedIndex = 0;
-            this.EmployeeTab.Size = new System.Drawing.Size(986, 498);
+            this.EmployeeTab.Size = new System.Drawing.Size(830, 509);
             this.EmployeeTab.TabIndex = 1;
             this.EmployeeTab.SelectedIndexChanged += new System.EventHandler(this.EmployeeTab_SelectedIndexChanged);
             // 
@@ -91,7 +112,7 @@
             this.listOfEmployees.Location = new System.Drawing.Point(4, 22);
             this.listOfEmployees.Name = "listOfEmployees";
             this.listOfEmployees.Padding = new System.Windows.Forms.Padding(3);
-            this.listOfEmployees.Size = new System.Drawing.Size(978, 472);
+            this.listOfEmployees.Size = new System.Drawing.Size(978, 460);
             this.listOfEmployees.TabIndex = 0;
             this.listOfEmployees.Text = "List of employees";
             this.listOfEmployees.UseVisualStyleBackColor = true;
@@ -105,22 +126,31 @@
             this.dg_employees.Location = new System.Drawing.Point(3, 3);
             this.dg_employees.Name = "dg_employees";
             this.dg_employees.ReadOnly = true;
-            this.dg_employees.Size = new System.Drawing.Size(972, 466);
+            this.dg_employees.Size = new System.Drawing.Size(972, 454);
             this.dg_employees.TabIndex = 0;
             this.dg_employees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_employees_CellContentClick);
             // 
             // AddEmployee
             // 
+            this.AddEmployee.Controls.Add(this.btn_uppancard);
+            this.AddEmployee.Controls.Add(this.btn_upaadhar);
+            this.AddEmployee.Controls.Add(this.btn_upphoto);
+            this.AddEmployee.Controls.Add(this.lbl_pancardimg);
+            this.AddEmployee.Controls.Add(this.lbl_aadharimg);
+            this.AddEmployee.Controls.Add(this.lbl_photo);
+            this.AddEmployee.Controls.Add(this.pb_pancard);
+            this.AddEmployee.Controls.Add(this.pb_aadhar);
+            this.AddEmployee.Controls.Add(this.pb_photo);
             this.AddEmployee.Controls.Add(this.btn_save);
             this.AddEmployee.Controls.Add(this.label7);
-            this.AddEmployee.Controls.Add(this.textBox3);
+            this.AddEmployee.Controls.Add(this.tb_pan);
             this.AddEmployee.Controls.Add(this.label6);
-            this.AddEmployee.Controls.Add(this.textBox2);
+            this.AddEmployee.Controls.Add(this.tb_aadhar);
             this.AddEmployee.Controls.Add(this.label5);
-            this.AddEmployee.Controls.Add(this.textBox1);
+            this.AddEmployee.Controls.Add(this.tb_mobile);
             this.AddEmployee.Controls.Add(this.label4);
-            this.AddEmployee.Controls.Add(this.dateTimePicker2);
-            this.AddEmployee.Controls.Add(this.dateTimePicker1);
+            this.AddEmployee.Controls.Add(this.dtp_doj);
+            this.AddEmployee.Controls.Add(this.dtp_dob);
             this.AddEmployee.Controls.Add(this.label3);
             this.AddEmployee.Controls.Add(this.lb_dob);
             this.AddEmployee.Controls.Add(this.rtb_address);
@@ -130,7 +160,7 @@
             this.AddEmployee.Location = new System.Drawing.Point(4, 22);
             this.AddEmployee.Name = "AddEmployee";
             this.AddEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.AddEmployee.Size = new System.Drawing.Size(908, 350);
+            this.AddEmployee.Size = new System.Drawing.Size(822, 483);
             this.AddEmployee.TabIndex = 1;
             this.AddEmployee.Text = "Add Employee";
             this.AddEmployee.UseVisualStyleBackColor = true;
@@ -138,12 +168,13 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(365, 301);
+            this.btn_save.Location = new System.Drawing.Point(395, 440);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 15;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // label7
             // 
@@ -155,13 +186,13 @@
             this.label7.Text = "Upload\r\nDocuments :";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox3
+            // tb_pan
             // 
-            this.textBox3.Location = new System.Drawing.Point(512, 179);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 20);
-            this.textBox3.TabIndex = 13;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.tb_pan.Location = new System.Drawing.Point(512, 179);
+            this.tb_pan.Name = "tb_pan";
+            this.tb_pan.Size = new System.Drawing.Size(213, 20);
+            this.tb_pan.TabIndex = 13;
+            this.tb_pan.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label6
             // 
@@ -173,13 +204,13 @@
             this.label6.Text = "Pan Card :";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // textBox2
+            // tb_aadhar
             // 
-            this.textBox2.Location = new System.Drawing.Point(513, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(213, 20);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tb_aadhar.Location = new System.Drawing.Point(513, 143);
+            this.tb_aadhar.Name = "tb_aadhar";
+            this.tb_aadhar.Size = new System.Drawing.Size(213, 20);
+            this.tb_aadhar.TabIndex = 11;
+            this.tb_aadhar.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label5
             // 
@@ -191,13 +222,13 @@
             this.label5.Text = "Aadhar :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox1
+            // tb_mobile
             // 
-            this.textBox1.Location = new System.Drawing.Point(513, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tb_mobile.Location = new System.Drawing.Point(513, 108);
+            this.tb_mobile.Name = "tb_mobile";
+            this.tb_mobile.Size = new System.Drawing.Size(213, 20);
+            this.tb_mobile.TabIndex = 9;
+            this.tb_mobile.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -209,21 +240,21 @@
             this.label4.Text = "Mobile :";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // dateTimePicker2
+            // dtp_doj
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(512, 68);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker2.TabIndex = 7;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dtp_doj.Location = new System.Drawing.Point(512, 68);
+            this.dtp_doj.Name = "dtp_doj";
+            this.dtp_doj.Size = new System.Drawing.Size(157, 20);
+            this.dtp_doj.TabIndex = 7;
+            this.dtp_doj.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // dateTimePicker1
+            // dtp_dob
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(512, 26);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtp_dob.Location = new System.Drawing.Point(512, 26);
+            this.dtp_dob.Name = "dtp_dob";
+            this.dtp_dob.Size = new System.Drawing.Size(157, 20);
+            this.dtp_dob.TabIndex = 6;
+            this.dtp_dob.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label3
             // 
@@ -284,17 +315,23 @@
             // 
             // ViewEmployee
             // 
+            this.ViewEmployee.Controls.Add(this.btnv_pan);
+            this.ViewEmployee.Controls.Add(this.btnv_aadhar);
+            this.ViewEmployee.Controls.Add(this.btnv_upphoto);
+            this.ViewEmployee.Controls.Add(this.pbv_pancard);
+            this.ViewEmployee.Controls.Add(this.pbv_aadhar);
+            this.ViewEmployee.Controls.Add(this.pbv_photo);
             this.ViewEmployee.Controls.Add(this.btn_delete);
             this.ViewEmployee.Controls.Add(this.btn_edit);
-            this.ViewEmployee.Controls.Add(this.textBox7);
+            this.ViewEmployee.Controls.Add(this.tbv_pan);
             this.ViewEmployee.Controls.Add(this.label14);
-            this.ViewEmployee.Controls.Add(this.textBox6);
+            this.ViewEmployee.Controls.Add(this.tbv_aadhar);
             this.ViewEmployee.Controls.Add(this.label13);
-            this.ViewEmployee.Controls.Add(this.dateTimePicker4);
+            this.ViewEmployee.Controls.Add(this.dtpv_doj);
             this.ViewEmployee.Controls.Add(this.label12);
-            this.ViewEmployee.Controls.Add(this.dateTimePicker3);
+            this.ViewEmployee.Controls.Add(this.dtpv_dob);
             this.ViewEmployee.Controls.Add(this.label11);
-            this.ViewEmployee.Controls.Add(this.textBox5);
+            this.ViewEmployee.Controls.Add(this.tbv_mobile);
             this.ViewEmployee.Controls.Add(this.label10);
             this.ViewEmployee.Controls.Add(this.rtbv_address);
             this.ViewEmployee.Controls.Add(this.label9);
@@ -303,14 +340,14 @@
             this.ViewEmployee.Location = new System.Drawing.Point(4, 22);
             this.ViewEmployee.Name = "ViewEmployee";
             this.ViewEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.ViewEmployee.Size = new System.Drawing.Size(908, 350);
+            this.ViewEmployee.Size = new System.Drawing.Size(822, 483);
             this.ViewEmployee.TabIndex = 2;
             this.ViewEmployee.Text = "View Employee";
             this.ViewEmployee.UseVisualStyleBackColor = true;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(460, 303);
+            this.btn_delete.Location = new System.Drawing.Point(473, 437);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 21;
@@ -319,21 +356,21 @@
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(299, 303);
+            this.btn_edit.Location = new System.Drawing.Point(333, 437);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(75, 23);
             this.btn_edit.TabIndex = 20;
             this.btn_edit.Text = "EDIT";
             this.btn_edit.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // tbv_pan
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(528, 177);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(213, 20);
-            this.textBox7.TabIndex = 19;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.tbv_pan.Enabled = false;
+            this.tbv_pan.Location = new System.Drawing.Point(528, 177);
+            this.tbv_pan.Name = "tbv_pan";
+            this.tbv_pan.Size = new System.Drawing.Size(213, 20);
+            this.tbv_pan.TabIndex = 19;
+            this.tbv_pan.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label14
             // 
@@ -344,13 +381,13 @@
             this.label14.TabIndex = 18;
             this.label14.Text = "Pan Card :";
             // 
-            // textBox6
+            // tbv_aadhar
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(528, 137);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(213, 20);
-            this.textBox6.TabIndex = 17;
+            this.tbv_aadhar.Enabled = false;
+            this.tbv_aadhar.Location = new System.Drawing.Point(528, 137);
+            this.tbv_aadhar.Name = "tbv_aadhar";
+            this.tbv_aadhar.Size = new System.Drawing.Size(213, 20);
+            this.tbv_aadhar.TabIndex = 17;
             // 
             // label13
             // 
@@ -361,13 +398,13 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Aadhar :";
             // 
-            // dateTimePicker4
+            // dtpv_doj
             // 
-            this.dateTimePicker4.Enabled = false;
-            this.dateTimePicker4.Location = new System.Drawing.Point(529, 63);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker4.TabIndex = 15;
+            this.dtpv_doj.Enabled = false;
+            this.dtpv_doj.Location = new System.Drawing.Point(529, 63);
+            this.dtpv_doj.Name = "dtpv_doj";
+            this.dtpv_doj.Size = new System.Drawing.Size(157, 20);
+            this.dtpv_doj.TabIndex = 15;
             // 
             // label12
             // 
@@ -378,13 +415,13 @@
             this.label12.TabIndex = 14;
             this.label12.Text = "Date of joining :";
             // 
-            // dateTimePicker3
+            // dtpv_dob
             // 
-            this.dateTimePicker3.Enabled = false;
-            this.dateTimePicker3.Location = new System.Drawing.Point(528, 26);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(157, 20);
-            this.dateTimePicker3.TabIndex = 13;
+            this.dtpv_dob.Enabled = false;
+            this.dtpv_dob.Location = new System.Drawing.Point(528, 26);
+            this.dtpv_dob.Name = "dtpv_dob";
+            this.dtpv_dob.Size = new System.Drawing.Size(157, 20);
+            this.dtpv_dob.TabIndex = 13;
             // 
             // label11
             // 
@@ -395,13 +432,13 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Date of birth :";
             // 
-            // textBox5
+            // tbv_mobile
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(528, 99);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(213, 20);
-            this.textBox5.TabIndex = 11;
+            this.tbv_mobile.Enabled = false;
+            this.tbv_mobile.Location = new System.Drawing.Point(528, 99);
+            this.tbv_mobile.Name = "tbv_mobile";
+            this.tbv_mobile.Size = new System.Drawing.Size(213, 20);
+            this.tbv_mobile.TabIndex = 11;
             // 
             // label10
             // 
@@ -453,11 +490,149 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // pb_photo
+            // 
+            this.pb_photo.Location = new System.Drawing.Point(129, 247);
+            this.pb_photo.Name = "pb_photo";
+            this.pb_photo.Size = new System.Drawing.Size(143, 147);
+            this.pb_photo.TabIndex = 16;
+            this.pb_photo.TabStop = false;
+            this.pb_photo.Click += new System.EventHandler(this.pb_photo_Click);
+            // 
+            // pb_aadhar
+            // 
+            this.pb_aadhar.Location = new System.Drawing.Point(353, 247);
+            this.pb_aadhar.Name = "pb_aadhar";
+            this.pb_aadhar.Size = new System.Drawing.Size(143, 147);
+            this.pb_aadhar.TabIndex = 17;
+            this.pb_aadhar.TabStop = false;
+            this.pb_aadhar.Click += new System.EventHandler(this.pb_aadhar_Click);
+            // 
+            // pb_pancard
+            // 
+            this.pb_pancard.Location = new System.Drawing.Point(582, 247);
+            this.pb_pancard.Name = "pb_pancard";
+            this.pb_pancard.Size = new System.Drawing.Size(143, 147);
+            this.pb_pancard.TabIndex = 18;
+            this.pb_pancard.TabStop = false;
+            this.pb_pancard.Click += new System.EventHandler(this.pb_pancard_Click);
+            // 
+            // lbl_photo
+            // 
+            this.lbl_photo.AutoSize = true;
+            this.lbl_photo.Location = new System.Drawing.Point(171, 231);
+            this.lbl_photo.Name = "lbl_photo";
+            this.lbl_photo.Size = new System.Drawing.Size(35, 13);
+            this.lbl_photo.TabIndex = 19;
+            this.lbl_photo.Text = "Photo";
+            this.lbl_photo.Click += new System.EventHandler(this.lbl_photo_Click);
+            // 
+            // lbl_aadharimg
+            // 
+            this.lbl_aadharimg.AutoSize = true;
+            this.lbl_aadharimg.Location = new System.Drawing.Point(392, 231);
+            this.lbl_aadharimg.Name = "lbl_aadharimg";
+            this.lbl_aadharimg.Size = new System.Drawing.Size(66, 13);
+            this.lbl_aadharimg.TabIndex = 20;
+            this.lbl_aadharimg.Text = "Aadhar Card";
+            this.lbl_aadharimg.Click += new System.EventHandler(this.lbl_aadharimg_Click);
+            // 
+            // lbl_pancardimg
+            // 
+            this.lbl_pancardimg.AutoSize = true;
+            this.lbl_pancardimg.Location = new System.Drawing.Point(625, 231);
+            this.lbl_pancardimg.Name = "lbl_pancardimg";
+            this.lbl_pancardimg.Size = new System.Drawing.Size(51, 13);
+            this.lbl_pancardimg.TabIndex = 21;
+            this.lbl_pancardimg.Text = "Pan Card";
+            this.lbl_pancardimg.Click += new System.EventHandler(this.lbl_pancardimg_Click);
+            // 
+            // btn_upphoto
+            // 
+            this.btn_upphoto.Location = new System.Drawing.Point(154, 400);
+            this.btn_upphoto.Name = "btn_upphoto";
+            this.btn_upphoto.Size = new System.Drawing.Size(91, 23);
+            this.btn_upphoto.TabIndex = 23;
+            this.btn_upphoto.Text = "Upload Photo";
+            this.btn_upphoto.UseVisualStyleBackColor = true;
+            this.btn_upphoto.Click += new System.EventHandler(this.btn_upphoto_Click);
+            // 
+            // btn_upaadhar
+            // 
+            this.btn_upaadhar.Location = new System.Drawing.Point(382, 400);
+            this.btn_upaadhar.Name = "btn_upaadhar";
+            this.btn_upaadhar.Size = new System.Drawing.Size(88, 23);
+            this.btn_upaadhar.TabIndex = 24;
+            this.btn_upaadhar.Text = "Upload Aadhar";
+            this.btn_upaadhar.UseVisualStyleBackColor = true;
+            this.btn_upaadhar.Click += new System.EventHandler(this.btn_upaadhar_Click);
+            // 
+            // btn_uppancard
+            // 
+            this.btn_uppancard.Location = new System.Drawing.Point(610, 400);
+            this.btn_uppancard.Name = "btn_uppancard";
+            this.btn_uppancard.Size = new System.Drawing.Size(94, 23);
+            this.btn_uppancard.TabIndex = 25;
+            this.btn_uppancard.Text = "Upload Pancard";
+            this.btn_uppancard.UseVisualStyleBackColor = true;
+            this.btn_uppancard.Click += new System.EventHandler(this.btn_uppancard_Click);
+            // 
+            // pbv_photo
+            // 
+            this.pbv_photo.Location = new System.Drawing.Point(132, 244);
+            this.pbv_photo.Name = "pbv_photo";
+            this.pbv_photo.Size = new System.Drawing.Size(138, 143);
+            this.pbv_photo.TabIndex = 22;
+            this.pbv_photo.TabStop = false;
+            // 
+            // pbv_aadhar
+            // 
+            this.pbv_aadhar.Location = new System.Drawing.Point(348, 244);
+            this.pbv_aadhar.Name = "pbv_aadhar";
+            this.pbv_aadhar.Size = new System.Drawing.Size(138, 143);
+            this.pbv_aadhar.TabIndex = 23;
+            this.pbv_aadhar.TabStop = false;
+            // 
+            // pbv_pancard
+            // 
+            this.pbv_pancard.Location = new System.Drawing.Point(558, 244);
+            this.pbv_pancard.Name = "pbv_pancard";
+            this.pbv_pancard.Size = new System.Drawing.Size(138, 143);
+            this.pbv_pancard.TabIndex = 24;
+            this.pbv_pancard.TabStop = false;
+            // 
+            // btnv_upphoto
+            // 
+            this.btnv_upphoto.Location = new System.Drawing.Point(157, 393);
+            this.btnv_upphoto.Name = "btnv_upphoto";
+            this.btnv_upphoto.Size = new System.Drawing.Size(86, 23);
+            this.btnv_upphoto.TabIndex = 25;
+            this.btnv_upphoto.Text = "Upload Photo";
+            this.btnv_upphoto.UseVisualStyleBackColor = true;
+            // 
+            // btnv_aadhar
+            // 
+            this.btnv_aadhar.Location = new System.Drawing.Point(373, 393);
+            this.btnv_aadhar.Name = "btnv_aadhar";
+            this.btnv_aadhar.Size = new System.Drawing.Size(89, 23);
+            this.btnv_aadhar.TabIndex = 26;
+            this.btnv_aadhar.Text = "Upload Aadhar";
+            this.btnv_aadhar.UseVisualStyleBackColor = true;
+            // 
+            // btnv_pan
+            // 
+            this.btnv_pan.Location = new System.Drawing.Point(581, 393);
+            this.btnv_pan.Name = "btnv_pan";
+            this.btnv_pan.Size = new System.Drawing.Size(94, 23);
+            this.btnv_pan.TabIndex = 27;
+            this.btnv_pan.Text = "Upload Pancard";
+            this.btnv_pan.UseVisualStyleBackColor = true;
+            // 
             // EmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 502);
+            this.ClientSize = new System.Drawing.Size(848, 517);
             this.Controls.Add(this.EmployeeTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeDetails";
@@ -469,6 +644,12 @@
             this.AddEmployee.PerformLayout();
             this.ViewEmployee.ResumeLayout(false);
             this.ViewEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_aadhar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_pancard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_aadhar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_pancard)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,36 +663,51 @@
         private System.Windows.Forms.TabPage ViewEmployee;
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_pan;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_aadhar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_mobile;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_doj;
+        private System.Windows.Forms.DateTimePicker dtp_dob;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_dob;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox tbv_name;
         private System.Windows.Forms.Label lb_name;
         private System.Windows.Forms.RichTextBox rtb_address;
         private System.Windows.Forms.Label lb_address;
         private System.Windows.Forms.RichTextBox rtbv_address;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbv_mobile;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dtpv_doj;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtpv_dob;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbv_pan;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbv_aadhar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lbl_pancardimg;
+        private System.Windows.Forms.Label lbl_aadharimg;
+        private System.Windows.Forms.Label lbl_photo;
+        private System.Windows.Forms.PictureBox pb_pancard;
+        private System.Windows.Forms.PictureBox pb_aadhar;
+        private System.Windows.Forms.PictureBox pb_photo;
+        private System.Windows.Forms.Button btn_uppancard;
+        private System.Windows.Forms.Button btn_upaadhar;
+        private System.Windows.Forms.Button btn_upphoto;
+        private System.Windows.Forms.Button btnv_pan;
+        private System.Windows.Forms.Button btnv_aadhar;
+        private System.Windows.Forms.Button btnv_upphoto;
+        private System.Windows.Forms.PictureBox pbv_pancard;
+        private System.Windows.Forms.PictureBox pbv_aadhar;
+        private System.Windows.Forms.PictureBox pbv_photo;
     }
 }

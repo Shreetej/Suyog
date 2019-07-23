@@ -118,7 +118,9 @@
     <Compile Include="src\Model\Employee.cs" />
     <Compile Include="src\Model\Material.cs" />
     <Compile Include="src\Repository\BillRepository.cs" />
+    <Compile Include="src\Repository\EmployeeRepository.cs" />
     <Compile Include="src\Service\BillService.cs" />
+    <Compile Include="src\Service\EmployeeService.cs" />
     <EmbeddedResource Include="AddBill.resx">
       <DependentUpon>AddBill.cs</DependentUpon>
     </EmbeddedResource>

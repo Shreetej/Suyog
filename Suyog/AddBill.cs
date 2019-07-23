@@ -35,18 +35,7 @@ namespace Suyog
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            try {
-                //DataGridViewColumnCollection data = new DataGridViewColumnCollection();
-                //dg_materials.Columns[0].Name = "Material Type";
-                //dg_materials.Columns[1].Name = "Quantity";
-                //dg_materials.Columns[2].Name = "Units";
-
-                dg_materials.Rows.Add(cb_materialType.Text, tb_qty.Text, tb_units.Text);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
 
         }
         private void btn_save_Click(object sender, EventArgs e)
@@ -94,6 +83,83 @@ namespace Suyog
             tb_qty.Clear();
             tb_units.Clear();
             dg_materials.Rows.Clear();
+        }
+
+        private void AddBill_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dg_materials_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lb_billno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_billNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_truckno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_truckno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_sender_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_sender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_reciever_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_type_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_materialType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_add_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                dg_materials.Rows.Add(cb_materialType.Text, tb_qty.Text, tb_units.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Suyog.src.Service
 
         public void removeBill(Bill bill)
         {
-            var std = billRepository.Bills.First<Bill>();
+            var std = billRepository.Bills.Find(bill.BillNo);
             billRepository.Bills.Remove(bill);
             billRepository.SaveChanges();
         }

@@ -43,7 +43,8 @@
             this.dg_billList.Location = new System.Drawing.Point(0, 0);
             this.dg_billList.Name = "dg_billList";
             this.dg_billList.ReadOnly = true;
-            this.dg_billList.Size = new System.Drawing.Size(868, 450);
+            this.dg_billList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dg_billList.Size = new System.Drawing.Size(823, 450);
             this.dg_billList.TabIndex = 0;
             // 
             // BillsList
@@ -51,7 +52,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(868, 450);
+            this.ClientSize = new System.Drawing.Size(823, 450);
             this.Controls.Add(this.dg_billList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BillsList";

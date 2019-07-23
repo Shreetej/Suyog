@@ -18,10 +18,13 @@ namespace Suyog.src.Model
         public string mobile { get; set; }
         public string aadhar { get; set; }
         public string pancard { get; set; }
+        public byte[] photo { get; set; }
+        public byte[] aadharimg { get; set; }
+        public byte[] pancardimg { get; set; }
 
         public Employee() { }
 
-        public Employee(string employeeName, string employeeAddress, DateTime dob, DateTime doj, string mobile, string aadhar, string pancard)
+        public Employee(string employeeName, string employeeAddress, DateTime dob, DateTime doj, string mobile, string aadhar, string pancard, byte[] photo,byte[] aadharimg, byte[] pancardimg)
         {
             this.employeeName = employeeName;
             this.employeeAddress = employeeAddress;
@@ -30,6 +33,9 @@ namespace Suyog.src.Model
             this.mobile = mobile;
             this.aadhar = aadhar;
             this.pancard = pancard;
+            this.photo = photo;
+            this.aadharimg = aadharimg;
+            this.pancardimg = pancardimg;
         }
     }
 }

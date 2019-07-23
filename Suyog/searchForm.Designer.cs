@@ -94,7 +94,7 @@
             this.panel_billList.Location = new System.Drawing.Point(28, 89);
             this.panel_billList.Name = "panel_billList";
             this.panel_billList.Size = new System.Drawing.Size(876, 420);
-            this.panel_billList.TabIndex = 14;
+            this.panel_billList.TabIndex = 0;
             // 
             // searchForm
             // 
