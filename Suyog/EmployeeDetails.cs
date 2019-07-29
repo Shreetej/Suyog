@@ -34,7 +34,14 @@ namespace Suyog
 
         private void EmployeeTab_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            /*if (EmployeeTab.SelectedIndex == 1)
+            {
+                employeeService = new EmployeeService();
+                var list = employeeService.DisplayEmployees();
+                var bindingList = new BindingList<Employee>(list);
+                var source = new BindingSource(bindingList, null);
+                dg_employees.DataSource = source;
+            }*/
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -129,7 +136,7 @@ namespace Suyog
 
         private void btn_upphoto_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openphoto = new OpenFileDialog() { Filter ="JPEG|jpg", ValidateNames = true, Multiselect = true })
+            using (OpenFileDialog openphoto = new OpenFileDialog() { /*Filter ="JPEG|jpg",*/ ValidateNames = true, Multiselect = true })
             {
                 if (openphoto.ShowDialog() == DialogResult.OK )
                 {
@@ -141,7 +148,7 @@ namespace Suyog
 
         private void btn_upaadhar_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openaadhar = new OpenFileDialog() { Filter = "JPEG|jpg", ValidateNames = true, Multiselect = true })
+            using (OpenFileDialog openaadhar = new OpenFileDialog() { ValidateNames = true, Multiselect = true })
             {
                 if (openaadhar.ShowDialog() == DialogResult.OK)
                 {
@@ -152,7 +159,7 @@ namespace Suyog
 
         private void btn_uppancard_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openpan = new OpenFileDialog() { Filter = "JPEG|jpg", ValidateNames = true, Multiselect = true })
+            using (OpenFileDialog openpan = new OpenFileDialog() {  ValidateNames = true, Multiselect = false })
             {
                 if (openpan.ShowDialog() == DialogResult.OK)
                 {
@@ -166,7 +173,8 @@ namespace Suyog
             try
             {
                 employeeService = new EmployeeService();
-                                
+                Employee employee = employeeService.addEmployee(tb_name.Text,rtb_address.Text,dtp_dob.Value,dtp_doj.Value,tb_mobile.Text,tb_aadhar.Text,tb_pan.Text,pb_photo.Image,pb_aadhar.Image,pb_pancard.Image);
+                MessageBox.Show(employee.ToString());
             }
             catch(Exception ex)
             {
@@ -203,5 +211,12 @@ namespace Suyog
         {
 
         }
+
+        private void EmployeeDetails_Load(object sender, EventArgs e)
+        {
+            EmployeeTab.SelectedIndexChanged += EmployeeTab_SelectedIndexChanged;
+        }
+        
+
     }
 }

@@ -32,6 +32,15 @@
             this.listOfEmployees = new System.Windows.Forms.TabPage();
             this.dg_employees = new System.Windows.Forms.DataGridView();
             this.AddEmployee = new System.Windows.Forms.TabPage();
+            this.btn_uppancard = new System.Windows.Forms.Button();
+            this.btn_upaadhar = new System.Windows.Forms.Button();
+            this.btn_upphoto = new System.Windows.Forms.Button();
+            this.lbl_pancardimg = new System.Windows.Forms.Label();
+            this.lbl_aadharimg = new System.Windows.Forms.Label();
+            this.lbl_photo = new System.Windows.Forms.Label();
+            this.pb_pancard = new System.Windows.Forms.PictureBox();
+            this.pb_aadhar = new System.Windows.Forms.PictureBox();
+            this.pb_photo = new System.Windows.Forms.PictureBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_pan = new System.Windows.Forms.TextBox();
@@ -49,6 +58,12 @@
             this.tb_name = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ViewEmployee = new System.Windows.Forms.TabPage();
+            this.btnv_pan = new System.Windows.Forms.Button();
+            this.btnv_aadhar = new System.Windows.Forms.Button();
+            this.btnv_upphoto = new System.Windows.Forms.Button();
+            this.pbv_pancard = new System.Windows.Forms.PictureBox();
+            this.pbv_aadhar = new System.Windows.Forms.PictureBox();
+            this.pbv_photo = new System.Windows.Forms.PictureBox();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.tbv_pan = new System.Windows.Forms.TextBox();
@@ -66,32 +81,17 @@
             this.tbv_name = new System.Windows.Forms.TextBox();
             this.lb_name = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pb_photo = new System.Windows.Forms.PictureBox();
-            this.pb_aadhar = new System.Windows.Forms.PictureBox();
-            this.pb_pancard = new System.Windows.Forms.PictureBox();
-            this.lbl_photo = new System.Windows.Forms.Label();
-            this.lbl_aadharimg = new System.Windows.Forms.Label();
-            this.lbl_pancardimg = new System.Windows.Forms.Label();
-            this.btn_upphoto = new System.Windows.Forms.Button();
-            this.btn_upaadhar = new System.Windows.Forms.Button();
-            this.btn_uppancard = new System.Windows.Forms.Button();
-            this.pbv_photo = new System.Windows.Forms.PictureBox();
-            this.pbv_aadhar = new System.Windows.Forms.PictureBox();
-            this.pbv_pancard = new System.Windows.Forms.PictureBox();
-            this.btnv_upphoto = new System.Windows.Forms.Button();
-            this.btnv_aadhar = new System.Windows.Forms.Button();
-            this.btnv_pan = new System.Windows.Forms.Button();
             this.EmployeeTab.SuspendLayout();
             this.listOfEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_employees)).BeginInit();
             this.AddEmployee.SuspendLayout();
-            this.ViewEmployee.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_photo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_aadhar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_pancard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbv_photo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbv_aadhar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_aadhar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_photo)).BeginInit();
+            this.ViewEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbv_pancard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_aadhar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_photo)).BeginInit();
             this.SuspendLayout();
             // 
             // EmployeeTab
@@ -102,7 +102,7 @@
             this.EmployeeTab.Location = new System.Drawing.Point(12, 4);
             this.EmployeeTab.Name = "EmployeeTab";
             this.EmployeeTab.SelectedIndex = 0;
-            this.EmployeeTab.Size = new System.Drawing.Size(830, 509);
+            this.EmployeeTab.Size = new System.Drawing.Size(824, 509);
             this.EmployeeTab.TabIndex = 1;
             this.EmployeeTab.SelectedIndexChanged += new System.EventHandler(this.EmployeeTab_SelectedIndexChanged);
             // 
@@ -112,7 +112,7 @@
             this.listOfEmployees.Location = new System.Drawing.Point(4, 22);
             this.listOfEmployees.Name = "listOfEmployees";
             this.listOfEmployees.Padding = new System.Windows.Forms.Padding(3);
-            this.listOfEmployees.Size = new System.Drawing.Size(978, 460);
+            this.listOfEmployees.Size = new System.Drawing.Size(816, 483);
             this.listOfEmployees.TabIndex = 0;
             this.listOfEmployees.Text = "List of employees";
             this.listOfEmployees.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.dg_employees.Location = new System.Drawing.Point(3, 3);
             this.dg_employees.Name = "dg_employees";
             this.dg_employees.ReadOnly = true;
-            this.dg_employees.Size = new System.Drawing.Size(972, 454);
+            this.dg_employees.Size = new System.Drawing.Size(810, 477);
             this.dg_employees.TabIndex = 0;
             this.dg_employees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_employees_CellContentClick);
             // 
@@ -165,6 +165,93 @@
             this.AddEmployee.Text = "Add Employee";
             this.AddEmployee.UseVisualStyleBackColor = true;
             this.AddEmployee.Click += new System.EventHandler(this.AddEmployee_Click);
+            // 
+            // btn_uppancard
+            // 
+            this.btn_uppancard.Location = new System.Drawing.Point(610, 400);
+            this.btn_uppancard.Name = "btn_uppancard";
+            this.btn_uppancard.Size = new System.Drawing.Size(94, 23);
+            this.btn_uppancard.TabIndex = 25;
+            this.btn_uppancard.Text = "Upload Pancard";
+            this.btn_uppancard.UseVisualStyleBackColor = true;
+            this.btn_uppancard.Click += new System.EventHandler(this.btn_uppancard_Click);
+            // 
+            // btn_upaadhar
+            // 
+            this.btn_upaadhar.Location = new System.Drawing.Point(382, 400);
+            this.btn_upaadhar.Name = "btn_upaadhar";
+            this.btn_upaadhar.Size = new System.Drawing.Size(88, 23);
+            this.btn_upaadhar.TabIndex = 24;
+            this.btn_upaadhar.Text = "Upload Aadhar";
+            this.btn_upaadhar.UseVisualStyleBackColor = true;
+            this.btn_upaadhar.Click += new System.EventHandler(this.btn_upaadhar_Click);
+            // 
+            // btn_upphoto
+            // 
+            this.btn_upphoto.Location = new System.Drawing.Point(154, 400);
+            this.btn_upphoto.Name = "btn_upphoto";
+            this.btn_upphoto.Size = new System.Drawing.Size(91, 23);
+            this.btn_upphoto.TabIndex = 23;
+            this.btn_upphoto.Text = "Upload Photo";
+            this.btn_upphoto.UseVisualStyleBackColor = true;
+            this.btn_upphoto.Click += new System.EventHandler(this.btn_upphoto_Click);
+            // 
+            // lbl_pancardimg
+            // 
+            this.lbl_pancardimg.AutoSize = true;
+            this.lbl_pancardimg.Location = new System.Drawing.Point(625, 231);
+            this.lbl_pancardimg.Name = "lbl_pancardimg";
+            this.lbl_pancardimg.Size = new System.Drawing.Size(51, 13);
+            this.lbl_pancardimg.TabIndex = 21;
+            this.lbl_pancardimg.Text = "Pan Card";
+            this.lbl_pancardimg.Click += new System.EventHandler(this.lbl_pancardimg_Click);
+            // 
+            // lbl_aadharimg
+            // 
+            this.lbl_aadharimg.AutoSize = true;
+            this.lbl_aadharimg.Location = new System.Drawing.Point(392, 231);
+            this.lbl_aadharimg.Name = "lbl_aadharimg";
+            this.lbl_aadharimg.Size = new System.Drawing.Size(66, 13);
+            this.lbl_aadharimg.TabIndex = 20;
+            this.lbl_aadharimg.Text = "Aadhar Card";
+            this.lbl_aadharimg.Click += new System.EventHandler(this.lbl_aadharimg_Click);
+            // 
+            // lbl_photo
+            // 
+            this.lbl_photo.AutoSize = true;
+            this.lbl_photo.Location = new System.Drawing.Point(171, 231);
+            this.lbl_photo.Name = "lbl_photo";
+            this.lbl_photo.Size = new System.Drawing.Size(35, 13);
+            this.lbl_photo.TabIndex = 19;
+            this.lbl_photo.Text = "Photo";
+            this.lbl_photo.Click += new System.EventHandler(this.lbl_photo_Click);
+            // 
+            // pb_pancard
+            // 
+            this.pb_pancard.Location = new System.Drawing.Point(582, 247);
+            this.pb_pancard.Name = "pb_pancard";
+            this.pb_pancard.Size = new System.Drawing.Size(143, 147);
+            this.pb_pancard.TabIndex = 18;
+            this.pb_pancard.TabStop = false;
+            this.pb_pancard.Click += new System.EventHandler(this.pb_pancard_Click);
+            // 
+            // pb_aadhar
+            // 
+            this.pb_aadhar.Location = new System.Drawing.Point(353, 247);
+            this.pb_aadhar.Name = "pb_aadhar";
+            this.pb_aadhar.Size = new System.Drawing.Size(143, 147);
+            this.pb_aadhar.TabIndex = 17;
+            this.pb_aadhar.TabStop = false;
+            this.pb_aadhar.Click += new System.EventHandler(this.pb_aadhar_Click);
+            // 
+            // pb_photo
+            // 
+            this.pb_photo.Location = new System.Drawing.Point(129, 247);
+            this.pb_photo.Name = "pb_photo";
+            this.pb_photo.Size = new System.Drawing.Size(143, 147);
+            this.pb_photo.TabIndex = 16;
+            this.pb_photo.TabStop = false;
+            this.pb_photo.Click += new System.EventHandler(this.pb_photo_Click);
             // 
             // btn_save
             // 
@@ -345,6 +432,57 @@
             this.ViewEmployee.Text = "View Employee";
             this.ViewEmployee.UseVisualStyleBackColor = true;
             // 
+            // btnv_pan
+            // 
+            this.btnv_pan.Location = new System.Drawing.Point(581, 393);
+            this.btnv_pan.Name = "btnv_pan";
+            this.btnv_pan.Size = new System.Drawing.Size(94, 23);
+            this.btnv_pan.TabIndex = 27;
+            this.btnv_pan.Text = "Upload Pancard";
+            this.btnv_pan.UseVisualStyleBackColor = true;
+            // 
+            // btnv_aadhar
+            // 
+            this.btnv_aadhar.Location = new System.Drawing.Point(373, 393);
+            this.btnv_aadhar.Name = "btnv_aadhar";
+            this.btnv_aadhar.Size = new System.Drawing.Size(89, 23);
+            this.btnv_aadhar.TabIndex = 26;
+            this.btnv_aadhar.Text = "Upload Aadhar";
+            this.btnv_aadhar.UseVisualStyleBackColor = true;
+            // 
+            // btnv_upphoto
+            // 
+            this.btnv_upphoto.Location = new System.Drawing.Point(157, 393);
+            this.btnv_upphoto.Name = "btnv_upphoto";
+            this.btnv_upphoto.Size = new System.Drawing.Size(86, 23);
+            this.btnv_upphoto.TabIndex = 25;
+            this.btnv_upphoto.Text = "Upload Photo";
+            this.btnv_upphoto.UseVisualStyleBackColor = true;
+            // 
+            // pbv_pancard
+            // 
+            this.pbv_pancard.Location = new System.Drawing.Point(558, 244);
+            this.pbv_pancard.Name = "pbv_pancard";
+            this.pbv_pancard.Size = new System.Drawing.Size(138, 143);
+            this.pbv_pancard.TabIndex = 24;
+            this.pbv_pancard.TabStop = false;
+            // 
+            // pbv_aadhar
+            // 
+            this.pbv_aadhar.Location = new System.Drawing.Point(348, 244);
+            this.pbv_aadhar.Name = "pbv_aadhar";
+            this.pbv_aadhar.Size = new System.Drawing.Size(138, 143);
+            this.pbv_aadhar.TabIndex = 23;
+            this.pbv_aadhar.TabStop = false;
+            // 
+            // pbv_photo
+            // 
+            this.pbv_photo.Location = new System.Drawing.Point(132, 244);
+            this.pbv_photo.Name = "pbv_photo";
+            this.pbv_photo.Size = new System.Drawing.Size(138, 143);
+            this.pbv_photo.TabIndex = 22;
+            this.pbv_photo.TabStop = false;
+            // 
             // btn_delete
             // 
             this.btn_delete.Location = new System.Drawing.Point(473, 437);
@@ -490,144 +628,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pb_photo
-            // 
-            this.pb_photo.Location = new System.Drawing.Point(129, 247);
-            this.pb_photo.Name = "pb_photo";
-            this.pb_photo.Size = new System.Drawing.Size(143, 147);
-            this.pb_photo.TabIndex = 16;
-            this.pb_photo.TabStop = false;
-            this.pb_photo.Click += new System.EventHandler(this.pb_photo_Click);
-            // 
-            // pb_aadhar
-            // 
-            this.pb_aadhar.Location = new System.Drawing.Point(353, 247);
-            this.pb_aadhar.Name = "pb_aadhar";
-            this.pb_aadhar.Size = new System.Drawing.Size(143, 147);
-            this.pb_aadhar.TabIndex = 17;
-            this.pb_aadhar.TabStop = false;
-            this.pb_aadhar.Click += new System.EventHandler(this.pb_aadhar_Click);
-            // 
-            // pb_pancard
-            // 
-            this.pb_pancard.Location = new System.Drawing.Point(582, 247);
-            this.pb_pancard.Name = "pb_pancard";
-            this.pb_pancard.Size = new System.Drawing.Size(143, 147);
-            this.pb_pancard.TabIndex = 18;
-            this.pb_pancard.TabStop = false;
-            this.pb_pancard.Click += new System.EventHandler(this.pb_pancard_Click);
-            // 
-            // lbl_photo
-            // 
-            this.lbl_photo.AutoSize = true;
-            this.lbl_photo.Location = new System.Drawing.Point(171, 231);
-            this.lbl_photo.Name = "lbl_photo";
-            this.lbl_photo.Size = new System.Drawing.Size(35, 13);
-            this.lbl_photo.TabIndex = 19;
-            this.lbl_photo.Text = "Photo";
-            this.lbl_photo.Click += new System.EventHandler(this.lbl_photo_Click);
-            // 
-            // lbl_aadharimg
-            // 
-            this.lbl_aadharimg.AutoSize = true;
-            this.lbl_aadharimg.Location = new System.Drawing.Point(392, 231);
-            this.lbl_aadharimg.Name = "lbl_aadharimg";
-            this.lbl_aadharimg.Size = new System.Drawing.Size(66, 13);
-            this.lbl_aadharimg.TabIndex = 20;
-            this.lbl_aadharimg.Text = "Aadhar Card";
-            this.lbl_aadharimg.Click += new System.EventHandler(this.lbl_aadharimg_Click);
-            // 
-            // lbl_pancardimg
-            // 
-            this.lbl_pancardimg.AutoSize = true;
-            this.lbl_pancardimg.Location = new System.Drawing.Point(625, 231);
-            this.lbl_pancardimg.Name = "lbl_pancardimg";
-            this.lbl_pancardimg.Size = new System.Drawing.Size(51, 13);
-            this.lbl_pancardimg.TabIndex = 21;
-            this.lbl_pancardimg.Text = "Pan Card";
-            this.lbl_pancardimg.Click += new System.EventHandler(this.lbl_pancardimg_Click);
-            // 
-            // btn_upphoto
-            // 
-            this.btn_upphoto.Location = new System.Drawing.Point(154, 400);
-            this.btn_upphoto.Name = "btn_upphoto";
-            this.btn_upphoto.Size = new System.Drawing.Size(91, 23);
-            this.btn_upphoto.TabIndex = 23;
-            this.btn_upphoto.Text = "Upload Photo";
-            this.btn_upphoto.UseVisualStyleBackColor = true;
-            this.btn_upphoto.Click += new System.EventHandler(this.btn_upphoto_Click);
-            // 
-            // btn_upaadhar
-            // 
-            this.btn_upaadhar.Location = new System.Drawing.Point(382, 400);
-            this.btn_upaadhar.Name = "btn_upaadhar";
-            this.btn_upaadhar.Size = new System.Drawing.Size(88, 23);
-            this.btn_upaadhar.TabIndex = 24;
-            this.btn_upaadhar.Text = "Upload Aadhar";
-            this.btn_upaadhar.UseVisualStyleBackColor = true;
-            this.btn_upaadhar.Click += new System.EventHandler(this.btn_upaadhar_Click);
-            // 
-            // btn_uppancard
-            // 
-            this.btn_uppancard.Location = new System.Drawing.Point(610, 400);
-            this.btn_uppancard.Name = "btn_uppancard";
-            this.btn_uppancard.Size = new System.Drawing.Size(94, 23);
-            this.btn_uppancard.TabIndex = 25;
-            this.btn_uppancard.Text = "Upload Pancard";
-            this.btn_uppancard.UseVisualStyleBackColor = true;
-            this.btn_uppancard.Click += new System.EventHandler(this.btn_uppancard_Click);
-            // 
-            // pbv_photo
-            // 
-            this.pbv_photo.Location = new System.Drawing.Point(132, 244);
-            this.pbv_photo.Name = "pbv_photo";
-            this.pbv_photo.Size = new System.Drawing.Size(138, 143);
-            this.pbv_photo.TabIndex = 22;
-            this.pbv_photo.TabStop = false;
-            // 
-            // pbv_aadhar
-            // 
-            this.pbv_aadhar.Location = new System.Drawing.Point(348, 244);
-            this.pbv_aadhar.Name = "pbv_aadhar";
-            this.pbv_aadhar.Size = new System.Drawing.Size(138, 143);
-            this.pbv_aadhar.TabIndex = 23;
-            this.pbv_aadhar.TabStop = false;
-            // 
-            // pbv_pancard
-            // 
-            this.pbv_pancard.Location = new System.Drawing.Point(558, 244);
-            this.pbv_pancard.Name = "pbv_pancard";
-            this.pbv_pancard.Size = new System.Drawing.Size(138, 143);
-            this.pbv_pancard.TabIndex = 24;
-            this.pbv_pancard.TabStop = false;
-            // 
-            // btnv_upphoto
-            // 
-            this.btnv_upphoto.Location = new System.Drawing.Point(157, 393);
-            this.btnv_upphoto.Name = "btnv_upphoto";
-            this.btnv_upphoto.Size = new System.Drawing.Size(86, 23);
-            this.btnv_upphoto.TabIndex = 25;
-            this.btnv_upphoto.Text = "Upload Photo";
-            this.btnv_upphoto.UseVisualStyleBackColor = true;
-            // 
-            // btnv_aadhar
-            // 
-            this.btnv_aadhar.Location = new System.Drawing.Point(373, 393);
-            this.btnv_aadhar.Name = "btnv_aadhar";
-            this.btnv_aadhar.Size = new System.Drawing.Size(89, 23);
-            this.btnv_aadhar.TabIndex = 26;
-            this.btnv_aadhar.Text = "Upload Aadhar";
-            this.btnv_aadhar.UseVisualStyleBackColor = true;
-            // 
-            // btnv_pan
-            // 
-            this.btnv_pan.Location = new System.Drawing.Point(581, 393);
-            this.btnv_pan.Name = "btnv_pan";
-            this.btnv_pan.Size = new System.Drawing.Size(94, 23);
-            this.btnv_pan.TabIndex = 27;
-            this.btnv_pan.Text = "Upload Pancard";
-            this.btnv_pan.UseVisualStyleBackColor = true;
-            // 
             // EmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,19 +637,20 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeDetails";
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.EmployeeDetails_Load);
             this.EmployeeTab.ResumeLayout(false);
             this.listOfEmployees.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_employees)).EndInit();
             this.AddEmployee.ResumeLayout(false);
             this.AddEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_pancard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_aadhar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_photo)).EndInit();
             this.ViewEmployee.ResumeLayout(false);
             this.ViewEmployee.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_photo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_aadhar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_pancard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbv_photo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbv_aadhar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbv_pancard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_aadhar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbv_photo)).EndInit();
             this.ResumeLayout(false);
 
         }

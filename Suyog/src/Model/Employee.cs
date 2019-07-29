@@ -7,21 +7,9 @@ using System.Threading.Tasks;
 
 namespace Suyog.src.Model
 {
-    class Employee
+    public class Employee
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int employeeId { get; set; }
-        public string employeeName { get; set; }
-        public string employeeAddress { get; set; }
-        public DateTime dob { get; set; }
-        public DateTime doj { get; set; }
-        public string mobile { get; set; }
-        public string aadhar { get; set; }
-        public string pancard { get; set; }
-        public byte[] photo { get; set; }
-        public byte[] aadharimg { get; set; }
-        public byte[] pancardimg { get; set; }
-
+        
         public Employee() { }
 
         public Employee(string employeeName, string employeeAddress, DateTime dob, DateTime doj, string mobile, string aadhar, string pancard, byte[] photo,byte[] aadharimg, byte[] pancardimg)
@@ -37,5 +25,19 @@ namespace Suyog.src.Model
             this.aadharimg = aadharimg;
             this.pancardimg = pancardimg;
         }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int employeeId { get; set; }
+        public string employeeName { get; set; }
+        public string employeeAddress { get; set; }
+        public DateTime dob { get; set; }
+        public DateTime doj { get; set; }
+        public string mobile { get; set; }
+        public string aadhar { get; set; }
+        public string pancard { get; set; }
+        public byte[] photo { get; set; }
+        public byte[] aadharimg { get; set; }
+        public byte[] pancardimg { get; set; }
+
     }
 }
