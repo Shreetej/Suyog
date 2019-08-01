@@ -81,6 +81,13 @@
             this.tbv_name = new System.Windows.Forms.TextBox();
             this.lb_name = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btn_saveEdit = new System.Windows.Forms.Button();
+            this.btn_cancelEdit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_empId = new System.Windows.Forms.Label();
+            this.empIdTxt = new System.Windows.Forms.Label();
             this.EmployeeTab.SuspendLayout();
             this.listOfEmployees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_employees)).BeginInit();
@@ -160,7 +167,7 @@
             this.AddEmployee.Location = new System.Drawing.Point(4, 22);
             this.AddEmployee.Name = "AddEmployee";
             this.AddEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.AddEmployee.Size = new System.Drawing.Size(822, 483);
+            this.AddEmployee.Size = new System.Drawing.Size(816, 483);
             this.AddEmployee.TabIndex = 1;
             this.AddEmployee.Text = "Add Employee";
             this.AddEmployee.UseVisualStyleBackColor = true;
@@ -231,6 +238,7 @@
             this.pb_pancard.Location = new System.Drawing.Point(582, 247);
             this.pb_pancard.Name = "pb_pancard";
             this.pb_pancard.Size = new System.Drawing.Size(143, 147);
+            this.pb_pancard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_pancard.TabIndex = 18;
             this.pb_pancard.TabStop = false;
             this.pb_pancard.Click += new System.EventHandler(this.pb_pancard_Click);
@@ -240,6 +248,7 @@
             this.pb_aadhar.Location = new System.Drawing.Point(353, 247);
             this.pb_aadhar.Name = "pb_aadhar";
             this.pb_aadhar.Size = new System.Drawing.Size(143, 147);
+            this.pb_aadhar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_aadhar.TabIndex = 17;
             this.pb_aadhar.TabStop = false;
             this.pb_aadhar.Click += new System.EventHandler(this.pb_aadhar_Click);
@@ -249,6 +258,7 @@
             this.pb_photo.Location = new System.Drawing.Point(129, 247);
             this.pb_photo.Name = "pb_photo";
             this.pb_photo.Size = new System.Drawing.Size(143, 147);
+            this.pb_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_photo.TabIndex = 16;
             this.pb_photo.TabStop = false;
             this.pb_photo.Click += new System.EventHandler(this.pb_photo_Click);
@@ -402,14 +412,17 @@
             // 
             // ViewEmployee
             // 
+            this.ViewEmployee.Controls.Add(this.empIdTxt);
+            this.ViewEmployee.Controls.Add(this.lbl_empId);
+            this.ViewEmployee.Controls.Add(this.label15);
+            this.ViewEmployee.Controls.Add(this.label8);
+            this.ViewEmployee.Controls.Add(this.label1);
             this.ViewEmployee.Controls.Add(this.btnv_pan);
             this.ViewEmployee.Controls.Add(this.btnv_aadhar);
             this.ViewEmployee.Controls.Add(this.btnv_upphoto);
             this.ViewEmployee.Controls.Add(this.pbv_pancard);
             this.ViewEmployee.Controls.Add(this.pbv_aadhar);
             this.ViewEmployee.Controls.Add(this.pbv_photo);
-            this.ViewEmployee.Controls.Add(this.btn_delete);
-            this.ViewEmployee.Controls.Add(this.btn_edit);
             this.ViewEmployee.Controls.Add(this.tbv_pan);
             this.ViewEmployee.Controls.Add(this.label14);
             this.ViewEmployee.Controls.Add(this.tbv_aadhar);
@@ -424,10 +437,14 @@
             this.ViewEmployee.Controls.Add(this.label9);
             this.ViewEmployee.Controls.Add(this.tbv_name);
             this.ViewEmployee.Controls.Add(this.lb_name);
+            this.ViewEmployee.Controls.Add(this.btn_saveEdit);
+            this.ViewEmployee.Controls.Add(this.btn_edit);
+            this.ViewEmployee.Controls.Add(this.btn_cancelEdit);
+            this.ViewEmployee.Controls.Add(this.btn_delete);
             this.ViewEmployee.Location = new System.Drawing.Point(4, 22);
             this.ViewEmployee.Name = "ViewEmployee";
             this.ViewEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.ViewEmployee.Size = new System.Drawing.Size(822, 483);
+            this.ViewEmployee.Size = new System.Drawing.Size(816, 483);
             this.ViewEmployee.TabIndex = 2;
             this.ViewEmployee.Text = "View Employee";
             this.ViewEmployee.UseVisualStyleBackColor = true;
@@ -440,6 +457,7 @@
             this.btnv_pan.TabIndex = 27;
             this.btnv_pan.Text = "Upload Pancard";
             this.btnv_pan.UseVisualStyleBackColor = true;
+            this.btnv_pan.Click += new System.EventHandler(this.Btnv_pan_Click);
             // 
             // btnv_aadhar
             // 
@@ -449,6 +467,7 @@
             this.btnv_aadhar.TabIndex = 26;
             this.btnv_aadhar.Text = "Upload Aadhar";
             this.btnv_aadhar.UseVisualStyleBackColor = true;
+            this.btnv_aadhar.Click += new System.EventHandler(this.Btnv_aadhar_Click);
             // 
             // btnv_upphoto
             // 
@@ -458,12 +477,14 @@
             this.btnv_upphoto.TabIndex = 25;
             this.btnv_upphoto.Text = "Upload Photo";
             this.btnv_upphoto.UseVisualStyleBackColor = true;
+            this.btnv_upphoto.Click += new System.EventHandler(this.Btnv_upphoto_Click);
             // 
             // pbv_pancard
             // 
             this.pbv_pancard.Location = new System.Drawing.Point(558, 244);
             this.pbv_pancard.Name = "pbv_pancard";
             this.pbv_pancard.Size = new System.Drawing.Size(138, 143);
+            this.pbv_pancard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbv_pancard.TabIndex = 24;
             this.pbv_pancard.TabStop = false;
             // 
@@ -472,6 +493,7 @@
             this.pbv_aadhar.Location = new System.Drawing.Point(348, 244);
             this.pbv_aadhar.Name = "pbv_aadhar";
             this.pbv_aadhar.Size = new System.Drawing.Size(138, 143);
+            this.pbv_aadhar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbv_aadhar.TabIndex = 23;
             this.pbv_aadhar.TabStop = false;
             // 
@@ -480,26 +502,29 @@
             this.pbv_photo.Location = new System.Drawing.Point(132, 244);
             this.pbv_photo.Name = "pbv_photo";
             this.pbv_photo.Size = new System.Drawing.Size(138, 143);
+            this.pbv_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbv_photo.TabIndex = 22;
             this.pbv_photo.TabStop = false;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(473, 437);
+            this.btn_delete.Location = new System.Drawing.Point(514, 437);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 21;
             this.btn_delete.Text = "DELETE";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.Btn_delete_Click);
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(333, 437);
+            this.btn_edit.Location = new System.Drawing.Point(302, 437);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(75, 23);
             this.btn_edit.TabIndex = 20;
             this.btn_edit.Text = "EDIT";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.Btn_edit_Click);
             // 
             // tbv_pan
             // 
@@ -590,7 +615,7 @@
             // rtbv_address
             // 
             this.rtbv_address.Enabled = false;
-            this.rtbv_address.Location = new System.Drawing.Point(90, 68);
+            this.rtbv_address.Location = new System.Drawing.Point(119, 71);
             this.rtbv_address.Name = "rtbv_address";
             this.rtbv_address.Size = new System.Drawing.Size(213, 96);
             this.rtbv_address.TabIndex = 5;
@@ -608,7 +633,7 @@
             // tbv_name
             // 
             this.tbv_name.Enabled = false;
-            this.tbv_name.Location = new System.Drawing.Point(88, 26);
+            this.tbv_name.Location = new System.Drawing.Point(119, 29);
             this.tbv_name.Name = "tbv_name";
             this.tbv_name.Size = new System.Drawing.Size(213, 20);
             this.tbv_name.TabIndex = 3;
@@ -627,6 +652,71 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btn_saveEdit
+            // 
+            this.btn_saveEdit.Location = new System.Drawing.Point(195, 437);
+            this.btn_saveEdit.Name = "btn_saveEdit";
+            this.btn_saveEdit.Size = new System.Drawing.Size(75, 23);
+            this.btn_saveEdit.TabIndex = 28;
+            this.btn_saveEdit.Text = "SAVE";
+            this.btn_saveEdit.UseVisualStyleBackColor = true;
+            this.btn_saveEdit.Click += new System.EventHandler(this.Btn_saveEdit_Click);
+            // 
+            // btn_cancelEdit
+            // 
+            this.btn_cancelEdit.Location = new System.Drawing.Point(411, 437);
+            this.btn_cancelEdit.Name = "btn_cancelEdit";
+            this.btn_cancelEdit.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelEdit.TabIndex = 29;
+            this.btn_cancelEdit.Text = "CANCEL";
+            this.btn_cancelEdit.UseVisualStyleBackColor = true;
+            this.btn_cancelEdit.Click += new System.EventHandler(this.Btn_cancelEdit_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(179, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Photo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(388, 228);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Aadhar";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(604, 228);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(47, 13);
+            this.label15.TabIndex = 32;
+            this.label15.Text = "Pancard";
+            // 
+            // lbl_empId
+            // 
+            this.lbl_empId.AutoSize = true;
+            this.lbl_empId.Location = new System.Drawing.Point(36, 183);
+            this.lbl_empId.Name = "lbl_empId";
+            this.lbl_empId.Size = new System.Drawing.Size(74, 13);
+            this.lbl_empId.TabIndex = 33;
+            this.lbl_empId.Text = " Employee Id :";
+            // 
+            // empIdTxt
+            // 
+            this.empIdTxt.AutoSize = true;
+            this.empIdTxt.Location = new System.Drawing.Point(116, 184);
+            this.empIdTxt.Name = "empIdTxt";
+            this.empIdTxt.Size = new System.Drawing.Size(0, 13);
+            this.empIdTxt.TabIndex = 34;
+            this.empIdTxt.Click += new System.EventHandler(this.Label17_Click);
             // 
             // EmployeeDetails
             // 
@@ -710,5 +800,12 @@
         private System.Windows.Forms.PictureBox pbv_pancard;
         private System.Windows.Forms.PictureBox pbv_aadhar;
         private System.Windows.Forms.PictureBox pbv_photo;
+        private System.Windows.Forms.Button btn_saveEdit;
+        private System.Windows.Forms.Button btn_cancelEdit;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label empIdTxt;
+        private System.Windows.Forms.Label lbl_empId;
     }
 }

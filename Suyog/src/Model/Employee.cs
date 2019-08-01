@@ -12,7 +12,7 @@ namespace Suyog.src.Model
         
         public Employee() { }
 
-        public Employee(string employeeName, string employeeAddress, DateTime dob, DateTime doj, string mobile, string aadhar, string pancard, byte[] photo,byte[] aadharimg, byte[] pancardimg)
+        public Employee(string employeeName, string employeeAddress, DateTime dob, DateTime doj, string mobile, string aadhar, string pancard, byte[] photo, byte[] aadharimg, byte[] pancardimg)
         {
             this.employeeName = employeeName;
             this.employeeAddress = employeeAddress;
@@ -24,6 +24,7 @@ namespace Suyog.src.Model
             this.photo = photo;
             this.aadharimg = aadharimg;
             this.pancardimg = pancardimg;
+            
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
