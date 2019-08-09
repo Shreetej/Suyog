@@ -82,6 +82,12 @@
     <Compile Include="AddBill.Designer.cs">
       <DependentUpon>AddBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdvanceScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdvanceScreen.Designer.cs">
+      <DependentUpon>AdvanceScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="BillsList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,21 +114,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryScreen.Designer.cs">
+      <DependentUpon>SalaryScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="searchForm.Designer.cs">
       <DependentUpon>searchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Dto\AdvanceDto.cs" />
+    <Compile Include="src\Dto\EmployeeDto.cs" />
+    <Compile Include="src\Dto\SalaryDto.cs" />
     <Compile Include="src\Model\Bill.cs" />
     <Compile Include="src\Model\Employee.cs" />
     <Compile Include="src\Model\Material.cs" />
-    <Compile Include="src\Repository\BillRepository.cs" />
-    <Compile Include="src\Repository\EmployeeRepository.cs" />
+    <Compile Include="src\Model\SalaryAdvance.cs" />
+    <Compile Include="src\Repository\SuyogRepository.cs" />
     <Compile Include="src\Service\BillService.cs" />
     <Compile Include="src\Service\EmployeeService.cs" />
+    <Compile Include="src\Service\SalaryAdvanceService.cs" />
     <EmbeddedResource Include="AddBill.resx">
       <DependentUpon>AddBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdvanceScreen.resx">
+      <DependentUpon>AdvanceScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BillsList.resx">
       <DependentUpon>BillsList.cs</DependentUpon>
@@ -145,6 +164,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SalaryScreen.resx">
+      <DependentUpon>SalaryScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="searchForm.resx">
       <DependentUpon>searchForm.cs</DependentUpon>
     </EmbeddedResource>

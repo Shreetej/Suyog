@@ -30,7 +30,7 @@ namespace Suyog
             {
                 DataGridViewRow viewRow = this.dg_employees.Rows[e.RowIndex];
                 loadViewEmployee(viewRow);
-                this.ViewEmployee.Select();
+                this.EmployeeTab.SelectedTab = ViewEmployee;
             }
         }
 
@@ -42,10 +42,18 @@ namespace Suyog
             tbv_aadhar.Text = viewRow.Cells["aadhar"].Value.ToString();
             tbv_pan.Text = viewRow.Cells["pancard"].Value.ToString();
             tbv_mobile.Text = viewRow.Cells["mobile"].Value.ToString();
-            
-            pbv_photo.Image = EmployeeService.byteArrayToImage((byte[])viewRow.Cells["photo"].Value);
-            pbv_aadhar.Image = EmployeeService.byteArrayToImage((byte[])viewRow.Cells["aadharimg"].Value);
-            pbv_pancard.Image = EmployeeService.byteArrayToImage((byte[])viewRow.Cells["pancardimg"].Value);
+            if (viewRow.Cells["photo"].Value != null)
+            {
+                pbv_photo.Image = EmployeeService.byteArrayToImage((byte[])viewRow.Cells["photo"].Value);
+            }
+            if (viewRow.Cells["aadharimg"].Value != null)
+            {
+                pbv_aadhar.Image = EmployeeService.byteArrayToImage((byte[])viewRow.Cells["aadharimg"].Value);
+            }
+            if (viewRow.Cells["pancardimg"].Value != null)
+            {
+                pbv_pancard.Image = EmployeeService.byteArrayToImage((byte[])viewRow.Cells["pancardimg"].Value);
+            }
             dtpv_dob.Value = (DateTime)viewRow.Cells["dob"].Value;
             dtpv_doj.Value = (DateTime)viewRow.Cells["doj"].Value;
         }
@@ -57,14 +65,10 @@ namespace Suyog
 
         private void EmployeeTab_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*if (EmployeeTab.SelectedIndex == 1)
+            if (EmployeeTab.SelectedIndex == 1)
             {
-                employeeService = new EmployeeService();
-                var list = employeeService.DisplayEmployees();
-                var bindingList = new BindingList<Employee>(list);
-                var source = new BindingSource(bindingList, null);
-                dg_employees.DataSource = source;
-            }*/
+                EmployeeListLoad();
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -196,6 +200,10 @@ namespace Suyog
             try
             {
                 employeeService = new EmployeeService();
+                if (pb_photo.Image == null)
+                {
+
+                }
                 Employee employee = employeeService.addEmployee(tb_name.Text,rtb_address.Text,dtp_dob.Value,dtp_doj.Value,tb_mobile.Text,tb_aadhar.Text,tb_pan.Text,pb_photo.Image,pb_aadhar.Image,pb_pancard.Image);
                 EmployeeListLoad();
                 MessageBox.Show("Employee details added.");
@@ -244,10 +252,12 @@ namespace Suyog
 
         private void EmployeeListLoad()
         {
+            
             var list = GetEmployees();
             var bindingList = new BindingList<Employee>(list);
             var source = new BindingSource(bindingList, null);
             dg_employees.DataSource = source;
+            
         }
         
         private List<Employee> GetEmployees()

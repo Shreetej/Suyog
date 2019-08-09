@@ -11,11 +11,11 @@ namespace Suyog.src.Service
 {
     public class BillService
     {
-        private BillRepository billRepository;
+        private Repository.SuyogRepository billRepository;
 
         public BillService()
         {
-            billRepository = new BillRepository();
+            billRepository = new Repository.SuyogRepository();
         }
 
         public Bill DisplayBillbyId(int billid)

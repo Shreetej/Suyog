@@ -35,9 +35,9 @@
             this.btn_employee = new System.Windows.Forms.Button();
             this.lb_appName = new System.Windows.Forms.Label();
             this.homePanel = new System.Windows.Forms.Panel();
+            this.panel_tab = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btn_tab_search = new System.Windows.Forms.Button();
-            this.panel_tab = new System.Windows.Forms.Panel();
             this.homePanel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "ADVANCES";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button5
             // 
@@ -78,6 +79,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "SALARY";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // btn_employee
             // 
@@ -110,6 +112,13 @@
             this.homePanel.TabIndex = 11;
             this.homePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.homePanel_Paint);
             // 
+            // panel_tab
+            // 
+            this.panel_tab.Location = new System.Drawing.Point(21, 97);
+            this.panel_tab.Name = "panel_tab";
+            this.panel_tab.Size = new System.Drawing.Size(903, 546);
+            this.panel_tab.TabIndex = 11;
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.btn_tab_search);
@@ -132,13 +141,6 @@
             this.btn_tab_search.Text = "SEARCH";
             this.btn_tab_search.UseVisualStyleBackColor = true;
             this.btn_tab_search.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel_tab
-            // 
-            this.panel_tab.Location = new System.Drawing.Point(21, 97);
-            this.panel_tab.Name = "panel_tab";
-            this.panel_tab.Size = new System.Drawing.Size(903, 546);
-            this.panel_tab.TabIndex = 11;
             // 
             // Home
             // 

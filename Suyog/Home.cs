@@ -69,5 +69,25 @@ namespace Suyog
             searchForm.Dock = DockStyle.Fill;
             searchForm.Show();
         }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            panel_tab.Controls.Clear();
+            SalaryScreen salaryScreen = new SalaryScreen();
+            salaryScreen.TopLevel = false;
+            panel_tab.Controls.Add(salaryScreen);
+            salaryScreen.Dock = DockStyle.Fill;
+            salaryScreen.Show();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            panel_tab.Controls.Clear();
+            AdvanceScreen advanceScreen = new AdvanceScreen();
+            advanceScreen.TopLevel = false;
+            panel_tab.Controls.Add(advanceScreen);
+            advanceScreen.Dock = DockStyle.Fill;
+            advanceScreen.Show();
+        }
     }
 }
