@@ -60,6 +60,7 @@
             this.btn_scan.TabIndex = 3;
             this.btn_scan.Text = "SCAN BILL";
             this.btn_scan.UseVisualStyleBackColor = true;
+            this.btn_scan.Click += new System.EventHandler(this.Btn_scan_Click);
             // 
             // button4
             // 

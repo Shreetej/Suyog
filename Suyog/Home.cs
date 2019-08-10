@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ScannerDemo;
 
 namespace Suyog
 {
@@ -88,6 +89,16 @@ namespace Suyog
             panel_tab.Controls.Add(advanceScreen);
             advanceScreen.Dock = DockStyle.Fill;
             advanceScreen.Show();
+        }
+
+        private void Btn_scan_Click(object sender, EventArgs e)
+        {
+            panel_tab.Controls.Clear();
+            Form1 scanScreen = new Form1();
+            scanScreen.TopLevel = false;
+            panel_tab.Controls.Add(scanScreen);
+            scanScreen.Dock = DockStyle.Fill;
+            scanScreen.Show();
         }
     }
 }
